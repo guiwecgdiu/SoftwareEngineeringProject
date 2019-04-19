@@ -4,7 +4,7 @@
 ---
 
 <blockquote>
-<p>大家好,在进行安卓开发之前务必读完本文</p>
+<p>在进行安卓开发之前务必读完本文</p>
 </blockquote>
 <h2 id="如何解决一些常见的问题">如何解决一些常见的问题</h2>
 <h3 id="如果出现gradle-sync-wrong的问题">如果出现Gradle Sync Wrong的问题</h3>
