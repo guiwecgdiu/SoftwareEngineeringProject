@@ -1,4 +1,4 @@
-package com.example.focusassistant;
+package com.example.testdemo;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
