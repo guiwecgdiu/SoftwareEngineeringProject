@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/checklist"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/checklist"/>
+
+    <TextView
+        android:id="@+id/feedbackToConclude"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:text="你好"
+        android:textSize="15sp"
+        android:textColor="#FF9800"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/checklist" />
+
+
+
+</RelativeLayout>
