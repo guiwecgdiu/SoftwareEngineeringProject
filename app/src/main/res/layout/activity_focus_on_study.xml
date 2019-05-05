@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FocusOnMeetingActivity">
+    tools:context=".FocusOnStudyActivity"
+    android:orientation="vertical">
 
     <Chronometer
-        android:id="@+id/tick_Meeting"
+        android:id="@+id/tick_Study"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -28,13 +29,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="330dp"
-            android:background="@drawable/muteoff"/>
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/note_icon"/>
+            android:background="@drawable/calculator"/>
 
     </LinearLayout>
 
@@ -43,31 +38,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="0dp"
         android:orientation="vertical">
 
-        <ToggleButton
-            android:id="@+id/muteOnOff"
+        <Button
+            android:id="@+id/calculator"
+            android:text="启用计算器"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="330dp"
-            android:textOff="静音关闭"
-            android:textOn="静音开启并震动"
             android:background="@drawable/button"
-            android:textStyle="bold"
-            android:textColor="#ffffff"/>
-
-        <Button
-            android:id="@+id/writeNoteInMeeting"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/button"
-            android:text="写笔记"
             android:textStyle="bold"
             android:textColor="#ffffff"/>
 
     </LinearLayout>
-
 
 </RelativeLayout>
