@@ -22,6 +22,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".WriteNoteActivity"></activity>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="g7f3YHI6Vi4lXADRyF8La1sXPckvhDmk" />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
         <activity
             android:name=".NoteListActivity"
             android:label="@string/title_activity_note_list"
