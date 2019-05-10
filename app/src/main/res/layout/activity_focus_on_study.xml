@@ -16,7 +16,7 @@
         android:layout_marginLeft="200dp"
         android:layout_marginTop="40dp"
         android:text="计时器"
-        android:textSize="110sp"
+        android:textSize="65sp"
         android:textColor="#ffffff"/>
 
     <LinearLayout
@@ -31,6 +31,12 @@
             android:layout_marginTop="330dp"
             android:background="@drawable/calculator"/>
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/dictionary"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -42,10 +48,20 @@
 
         <Button
             android:id="@+id/calculator"
-            android:text="启用计算器"
+            android:text="计算器"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="330dp"
+            android:background="@drawable/button"
+            android:textStyle="bold"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/checkUp"
+            android:text="英汉词典"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/button"
             android:textStyle="bold"
             android:textColor="#ffffff"/>

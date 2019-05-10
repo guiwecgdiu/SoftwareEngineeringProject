@@ -33,7 +33,7 @@ public class FocusOnMeetingActivity extends AppCompatActivity {
         this.chronometer = findViewById(R.id.tick_Meeting);
         this.startTime = SystemClock.elapsedRealtime();
         chronometer.setBase(this.startTime);
-        chronometer.setFormat("%s");
+        chronometer.setFormat("时间已经过去：%s");
         chronometer.start();
 
 

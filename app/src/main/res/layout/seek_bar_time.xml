@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -9,15 +10,22 @@
         android:id="@+id/time_diaplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="请选择时间"
+        android:text="请选择时间(单位：分钟)"
         android:textSize="25sp"
         android:layout_gravity="center_horizontal"/>
 
-    <android.support.v7.widget.AppCompatSeekBar
-        android:id="@+id/time_choose"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="60"/>
+    <com.jesusm.holocircleseekbar.lib.HoloCircleSeekBar
+        android:id="@+id/time_toChoose"
+        android:layout_width="285dp"
+        android:layout_height="285dp"
+        android:layout_centerInParent="true"
+        app:max="60"
+        app:pointer_color="#FF9800"
+        app:pointer_size="20dp"
+        app:text_size="40sp"
+        app:wheel_active_color="#E040FB"
+        app:wheel_unactive_color="#7C4DFF" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -40,4 +48,6 @@
             android:background="@drawable/button"/>
 
     </RelativeLayout>
+
+
 </LinearLayout>
