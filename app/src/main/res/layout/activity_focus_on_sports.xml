@@ -15,7 +15,7 @@
         android:layout_marginLeft="200dp"
         android:layout_marginTop="40dp"
         android:text="计时器"
-        android:textSize="110sp"
+        android:textSize="65sp"
         android:textColor="#ffffff"/>
 
     <LinearLayout
@@ -28,13 +28,13 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="330dp"
-            android:background="@drawable/direction_icon"/>
+            android:background="@drawable/compass_icon"/>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/compass"/>
+            android:background="@drawable/map"/>
 
     </LinearLayout>
 

@@ -5,13 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.text.DecimalFormat;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener{
     Button btn_0,btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7,btn_8,btn_9,btn_pt;
     Button btn_mul,btn_div,btn_add,btn_sub;
     Button btn_clr,btn_del,btn_eq;
     EditText et_input;
-    boolean clr_flag;    //判断et编辑文本框中是否清空
+    boolean clr_flag;
+    double preAnswer=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,8 +151,16 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         double cnt=0;
 
         if(!s1.equals("")&&!s2.equals("")){
-            double d1=Double.parseDouble(s1);
-            double d2=Double.parseDouble(s2);
+
+            double d1=0.0;
+            double d2=0.0;
+            try{
+                d1=Double.parseDouble(s1);
+                d2=Double.parseDouble(s2);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, "输入数据违法", Toast.LENGTH_SHORT).show();
+            }
             if(op.equals("+")){
                 cnt=d1+d2;
             }
@@ -162,61 +174,95 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
             if(op.equals("÷")){
                 if(d2==0) cnt=0;
-                else cnt=d1/d2;
+                else cnt=d1/d2+(d1%d2);
             }
 
+            double answer=cnt;
+
             if(!s1.contains(".")&&!s2.contains(".")&&!op.equals("÷")) {
-                int res = (int) cnt;
-                et_input.setText(res+"");
+                int res = (int) answer;
+                DecimalFormat df = new DecimalFormat( "0.00");
+                et_input.setText(df.format(res)+"");
+                this.preAnswer=res;
             }else {
-                et_input.setText(cnt+"");}
+                DecimalFormat df = new DecimalFormat( "0.00");
+                et_input.setText(df.format(answer)+"");
+                this.preAnswer=answer;
+            }
 
         }
 
-        //如果s1是空    s2不是空  就执行下一步
+        //如果s1不是空    s2是空  就执行下一步
 
         else if(!s1.equals("")&&s2.equals("")){
-            double d1=Double.parseDouble(s1);
+            double d1=0.0;
+            try{
+                d1=Double.parseDouble(s1);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, "输入数据违法", Toast.LENGTH_SHORT).show();
+            }
+
             if(op.equals("+")){
                 cnt=d1;
+                this.preAnswer=d1;
             }
             if(op.equals("-")){
                 cnt=d1;
+                this.preAnswer=d1;
             }
             if(op.equals("×")){
                 cnt=0;
+                this.preAnswer=0;
             }
             if(op.equals("÷")){
                 cnt=0;
+                this.preAnswer=0;
             }
-            if(!s1.contains(".")) {
-                int res = (int) cnt;
-                et_input.setText(res+"");
-            }else {
-                et_input.setText(cnt+"");}
+            et_input.setText(cnt+"");
 
         }
 
         //如果s1是空    s2不是空  就执行下一步
         else if(s1.equals("")&&!s2.equals("")){
-            double d2=Double.parseDouble(s2);
+            double d2=0.0;
+            try{
+                d2=Double.parseDouble(s2);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, "输入数据违法", Toast.LENGTH_SHORT).show();
+            }
             if(op.equals("+")){
-                cnt=d2;
+                cnt=this.preAnswer+d2;
+                this.preAnswer=d2;
             }
             if(op.equals("-")){
-                cnt=0-d2;
+                cnt=preAnswer-d2;
+                this.preAnswer=cnt;
             }
             if(op.equals("×")){
-                cnt=0;
+                cnt=this.preAnswer*d2;
+                this.preAnswer=cnt;
+
             }
             if(op.equals("÷")){
-                cnt=0;
+                if(d2==0)
+                    cnt=0;
+                else cnt=preAnswer/d2+(preAnswer%d2);
+                this.preAnswer=cnt;
             }
+
             if(!s2.contains(".")) {
-                int res = (int) cnt;
-                et_input.setText(res+"");
+                double answer=cnt;
+                DecimalFormat df = new DecimalFormat( "0.00");
+                this.preAnswer=answer;
+                et_input.setText(df.format(answer)+"");
             }else {
-                et_input.setText(cnt+"");}
+                double answer=cnt;
+                DecimalFormat df = new DecimalFormat( "0.00");
+                this.preAnswer=answer;
+                et_input.setText(df.format(answer)+"");
+            }
         }
         else {
             et_input.setText("");
