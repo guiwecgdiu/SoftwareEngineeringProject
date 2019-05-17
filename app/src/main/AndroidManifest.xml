@@ -21,13 +21,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WriteNoteActivity"></activity>
+        <activity android:name=".DictionaryActivity"></activity>
+        <activity android:name=".WriteNoteActivity" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="g7f3YHI6Vi4lXADRyF8La1sXPckvhDmk" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
         <activity
             android:name=".NoteListActivity"
             android:label="@string/title_activity_note_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NoteContentActivity" />
-        <activity android:name=".DirectionActivity" />
         <activity android:name=".ProductionActivity" />
         <activity android:name=".MapActivity" />
         <activity android:name=".FocusOnStudyActivity" />

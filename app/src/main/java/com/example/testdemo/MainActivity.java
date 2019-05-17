@@ -20,6 +20,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jesusm.holocircleseekbar.lib.HoloCircleSeekBar;
+
 import java.util.ArrayList;
 
 
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView lvLeftMenu;
     private Button start;
     private boolean isExit = false;
+
+    protected HoloCircleSeekBar holoCircleSeekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,35 +171,20 @@ public class MainActivity extends AppCompatActivity {
 
                         final AlertDialog dialog = aBuilder.create();
                         dialog.show();
+                        holoCircleSeekBar=dialog.findViewById(R.id.time_toChoose);
+                        textView=dialog.findViewById(R.id.time_diaplay);
+                        Button buttonToSure=dialog.findViewById(R.id.forSure);
+                        Button buttonNotToSure=dialog.findViewById(R.id.NotSure);
 
-                        seekBar = dialog.findViewById(R.id.time_choose);
-                        textView = dialog.findViewById(R.id.time_diaplay);
-                        Button buttontoSure = dialog.findViewById(R.id.forSure);
-                        Button buttonNotToSure = dialog.findViewById(R.id.NotSure);
-                        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                            @Override
-                            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                                textView.setText("您选择了" + i + "分钟");
-                            }
-
-                            @Override
-                            public void onStartTrackingTouch(SeekBar seekBar) {
-
-                            }
-
-                            @Override
-                            public void onStopTrackingTouch(SeekBar seekBar) {
-
-                            }
-                        });
-
-                        buttontoSure.setOnClickListener(new View.OnClickListener() {
+                        buttonToSure.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                focusTime = seekBar.getProgress() * 60;
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("timeSet", focusTime);
-                                Intent intent = new Intent(MainActivity.this, FocusOnStudyActivity.class);
+                                Toast.makeText(MainActivity.this, "选择了"+holoCircleSeekBar.getValue()+"分钟", Toast.LENGTH_SHORT).show();
+
+                                focusTime=holoCircleSeekBar.getValue()*60;
+                                Bundle bundle=new Bundle();
+                                bundle.putInt("timeSet",focusTime);
+                                Intent intent=new Intent(MainActivity.this,FocusOnStudyActivity.class);
                                 intent.putExtras(bundle);
                                 startActivity(intent);
                             }
@@ -208,6 +197,44 @@ public class MainActivity extends AppCompatActivity {
                                 dialog.dismiss();
                             }
                         });
+
+//
+//                        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//                            @Override
+//                            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+//                                textView.setText("您选择了" + i + "分钟");
+//                            }
+//
+//                            @Override
+//                            public void onStartTrackingTouch(SeekBar seekBar) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onStopTrackingTouch(SeekBar seekBar) {
+//
+//                            }
+//                        });
+//
+//                        buttonToSure.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//                                focusTime = seekBar.getProgress() * 60;
+//                                Bundle bundle = new Bundle();
+//                                bundle.putInt("timeSet", focusTime);
+//                                Intent intent = new Intent(MainActivity.this, FocusOnStudyActivity.class);
+//                                intent.putExtras(bundle);
+//                                startActivity(intent);
+//                            }
+//                        });
+//
+//                        buttonNotToSure.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//                                Toast.makeText(MainActivity.this, "您取消了这一次的专注", Toast.LENGTH_SHORT).show();
+//                                dialog.dismiss();
+//                            }
+//                        });
                     }
 
                     //
@@ -220,32 +247,21 @@ public class MainActivity extends AppCompatActivity {
                         final AlertDialog dialog = aBuilder.create();
                         dialog.show();
 
-                        seekBar = dialog.findViewById(R.id.time_choose);
-                        textView = dialog.findViewById(R.id.time_diaplay);
-                        Button buttontoSure = dialog.findViewById(R.id.forSure);
-                        Button buttonNotToSure = dialog.findViewById(R.id.NotSure);
-                        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                            @Override
-                            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                                textView.setText("您选择了" + i + "分钟");
-                            }
+                        holoCircleSeekBar=dialog.findViewById(R.id.time_toChoose);
 
-                            @Override
-                            public void onStartTrackingTouch(SeekBar seekBar) {
-                            }
+                        textView=dialog.findViewById(R.id.time_diaplay);
+                        Button buttonToSure=dialog.findViewById(R.id.forSure);
+                        Button buttonNotToSure=dialog.findViewById(R.id.NotSure);
 
-                            @Override
-                            public void onStopTrackingTouch(SeekBar seekBar) {
-                            }
-                        });
-
-                        buttontoSure.setOnClickListener(new View.OnClickListener() {
+                        buttonToSure.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                focusTime = seekBar.getProgress() * 60;
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("timeSet", focusTime);
-                                Intent intent = new Intent(MainActivity.this, FocusOnSportsActivity.class);
+                                Toast.makeText(MainActivity.this, "选择了"+holoCircleSeekBar.getValue()+"分钟", Toast.LENGTH_SHORT).show();
+                                focusTime=holoCircleSeekBar.getValue()*60;
+
+                                Bundle bundle=new Bundle();
+                                bundle.putInt("timeSet",focusTime);
+                                Intent intent=new Intent(MainActivity.this,FocusOnSportsActivity.class);
                                 intent.putExtras(bundle);
                                 startActivity(intent);
                             }
@@ -258,6 +274,45 @@ public class MainActivity extends AppCompatActivity {
                                 dialog.dismiss();
                             }
                         });
+
+//                        seekBar = dialog.findViewById(R.id.time_choose);
+//                        textView = dialog.findViewById(R.id.time_diaplay);
+//                        Button buttontoSure = dialog.findViewById(R.id.forSure);
+//                        Button buttonNotToSure = dialog.findViewById(R.id.NotSure);
+//                        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//                            @Override
+//                            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+//                                textView.setText("您选择了" + i + "分钟");
+//                            }
+//
+//                            @Override
+//                            public void onStartTrackingTouch(SeekBar seekBar) {
+//                            }
+//
+//                            @Override
+//                            public void onStopTrackingTouch(SeekBar seekBar) {
+//                            }
+//                        });
+//
+//                        buttontoSure.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//                                focusTime = seekBar.getProgress() * 60;
+//                                Bundle bundle = new Bundle();
+//                                bundle.putInt("timeSet", focusTime);
+//                                Intent intent = new Intent(MainActivity.this, FocusOnSportsActivity.class);
+//                                intent.putExtras(bundle);
+//                                startActivity(intent);
+//                            }
+//                        });
+//
+//                        buttonNotToSure.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//                                Toast.makeText(MainActivity.this, "您取消了这一次的专注", Toast.LENGTH_SHORT).show();
+//                                dialog.dismiss();
+//                            }
+//                        });
                     }
 
                     //

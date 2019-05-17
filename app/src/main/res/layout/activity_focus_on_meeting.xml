@@ -15,7 +15,7 @@
         android:layout_marginLeft="200dp"
         android:layout_marginTop="40dp"
         android:text="计时器"
-        android:textSize="110sp"
+        android:textSize="65sp"
         android:textColor="#ffffff"/>
 
     <LinearLayout
