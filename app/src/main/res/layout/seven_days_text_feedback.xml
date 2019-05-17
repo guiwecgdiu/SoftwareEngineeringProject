@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:text="你好"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="#FF9800"
         android:textStyle="bold"
         android:layout_toRightOf="@+id/checklist" />

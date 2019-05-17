@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FocusOnSportsActivity">
+    tools:context=".FocusOnSportsActivity"
+    android:background="#000">
 
     <Chronometer
         android:id="@+id/tick_Sports"

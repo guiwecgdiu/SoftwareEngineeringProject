@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if (i == 1) {
-//                        Intent intent=new Intent(MainActivity.this,NoteListActivity.class);
-//                        startActivity(intent);
+                        Intent intent=new Intent(MainActivity.this,NoteListActivity.class);
+                       startActivity(intent);
                 }
                 if (i == 2) {
-//                        Intent intent=new Intent(MainActivity.this,ProductionActivity.class);
-//                        startActivity(intent);
+                       Intent intent=new Intent(MainActivity.this,ProductionActivity.class);
+                        startActivity(intent);
                 }
             }
         });
@@ -165,8 +165,8 @@ public class MainActivity extends AppCompatActivity {
                     if (type == 1) {
                         Toast.makeText(MainActivity.this, "你选择了专注学习", Toast.LENGTH_SHORT).show();
 
-                        AlertDialog.Builder aBuilder = new AlertDialog.Builder(MainActivity.this);
-                        View view1 = LayoutInflater.from(MainActivity.this).inflate(R.layout.seek_bar_time, null);
+                        AlertDialog.Builder aBuilder=new AlertDialog.Builder(MainActivity.this);
+                        View view1= LayoutInflater.from(MainActivity.this).inflate(R.layout.seek_bar_time,null);
                         aBuilder.setView(view1);
 
                         final AlertDialog dialog = aBuilder.create();
@@ -175,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
                         textView=dialog.findViewById(R.id.time_diaplay);
                         Button buttonToSure=dialog.findViewById(R.id.forSure);
                         Button buttonNotToSure=dialog.findViewById(R.id.NotSure);
-
                         buttonToSure.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
@@ -240,13 +239,12 @@ public class MainActivity extends AppCompatActivity {
                     //
                     if (type == 2) {
                         Toast.makeText(MainActivity.this, "你选择了专注运动", Toast.LENGTH_SHORT).show();
-                        AlertDialog.Builder aBuilder = new AlertDialog.Builder(MainActivity.this);
-                        View view1 = LayoutInflater.from(MainActivity.this).inflate(R.layout.seek_bar_time, null);
+                        AlertDialog.Builder aBuilder=new AlertDialog.Builder(MainActivity.this);
+                        View view1= LayoutInflater.from(MainActivity.this).inflate(R.layout.seek_bar_time,null);
                         aBuilder.setView(view1);
 
                         final AlertDialog dialog = aBuilder.create();
                         dialog.show();
-
                         holoCircleSeekBar=dialog.findViewById(R.id.time_toChoose);
 
                         textView=dialog.findViewById(R.id.time_diaplay);

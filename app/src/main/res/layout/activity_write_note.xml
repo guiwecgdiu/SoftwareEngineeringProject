@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".WriteNoteActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/noteWritten"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:selectAllOnFocus="true"
+        android:hint="请在此输入相关笔记内容"
+        android:textColorHint="#000"
+        android:maxLines="120"
+        android:textSize="23sp"
+        android:textColor="#FF9800"/>
+
+</RelativeLayout>

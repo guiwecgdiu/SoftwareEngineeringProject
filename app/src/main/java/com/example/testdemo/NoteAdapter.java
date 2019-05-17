@@ -23,8 +23,8 @@ public class NoteAdapter extends ArrayAdapter<Note> {
         Note note=getItem(position);
         View view= LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
 
-        //TextView textView=view.findViewById(R.id.note_title);
-        //textView.setText(note.getTitle());
+        TextView textView=view.findViewById(R.id.note_title);
+        textView.setText(note.getTitle());
 
 
         return view;

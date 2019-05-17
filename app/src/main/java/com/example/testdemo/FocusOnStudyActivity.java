@@ -101,6 +101,8 @@ public class FocusOnStudyActivity extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     public void onBackPressed(){
         AlertDialog.Builder reminderBuilder=new AlertDialog.Builder(FocusOnStudyActivity.this);
