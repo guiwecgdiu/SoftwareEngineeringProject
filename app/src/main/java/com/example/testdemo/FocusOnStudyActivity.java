@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.EditText;
 
 public class FocusOnStudyActivity extends AppCompatActivity {
     protected int timeSet;
@@ -35,7 +36,7 @@ public class FocusOnStudyActivity extends AppCompatActivity {
         this.chronometer=findViewById(R.id.tick_Study);
         this.startTime= SystemClock.elapsedRealtime();
         chronometer.setBase(this.startTime);
-        chronometer.setFormat("%s");
+        chronometer.setFormat("时间已经过去：%s");
         chronometer.start();
 
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
@@ -67,7 +68,40 @@ public class FocusOnStudyActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button button1=findViewById(R.id.checkUp);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder aBuider=new AlertDialog.Builder(FocusOnStudyActivity.this);
+                final EditText editText=new EditText(FocusOnStudyActivity.this);
+                aBuider.setTitle("查询英文单词");
+                aBuider.setView(editText);
+                aBuider.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent=new Intent(FocusOnStudyActivity.this,DictionaryActivity.class);
+                        Bundle bundle=new Bundle();
+                        String s=editText.getText().toString();
+                        bundle.putString("checkItem",s);
+
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                });
+                aBuider.setNegativeButton("取消查询", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                aBuider.show();
+            }
+
+        });
     }
+
+
 
     @Override
     public void onBackPressed(){

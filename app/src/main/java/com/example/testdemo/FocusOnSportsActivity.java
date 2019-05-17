@@ -37,7 +37,7 @@ public class FocusOnSportsActivity extends AppCompatActivity {
 
         this.startTime= SystemClock.elapsedRealtime();
         chronometer.setBase(this.startTime);
-        chronometer.setFormat("%s");
+        chronometer.setFormat("时间已经过去：%s");
         chronometer.start();
 
         Button button=findViewById(R.id.mapDirection);
