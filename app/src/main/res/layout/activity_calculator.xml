@@ -14,7 +14,6 @@
         android:paddingRight="5dp"
         android:paddingBottom="5dp"
         android:textSize="50sp"
-        android:textColor="#000"
         android:textColor="#ffffff"
         android:focusable="false"
         android:maxLines="1"/>
