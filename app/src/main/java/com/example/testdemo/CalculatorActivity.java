@@ -15,7 +15,8 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     Button btn_clr,btn_del,btn_eq;
     EditText et_input;
     boolean clr_flag;
-    double preAnswer=0;
+    double preAnswer=0;//判断et编辑文本框中是否清空
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -267,6 +268,5 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         else {
             et_input.setText("");
         }
-
     }
 }

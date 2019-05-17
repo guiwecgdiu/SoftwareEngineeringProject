@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FocusOnMeetingActivity">
+    tools:context=".FocusOnMeetingActivity"
+    android:orientation="vertical"
+    android:background="#000">
 
     <Chronometer
         android:id="@+id/tick_Meeting"
@@ -28,13 +30,13 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="330dp"
-            android:background="@drawable/muteoff"/>
+            android:background="@drawable/mute"/>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/note_icon"/>
+            android:background="@drawable/note"/>
 
     </LinearLayout>
 

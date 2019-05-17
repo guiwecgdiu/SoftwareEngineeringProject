@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FocusOnStudyActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#000">
 
     <Chronometer
         android:id="@+id/tick_Study"

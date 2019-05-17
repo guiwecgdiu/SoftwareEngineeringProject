@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/recordItem"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:id="@+id/TypeTimeFinished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:textSize="17sp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:paddingLeft="14dp"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/finished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#0f0"
+        android:textSize="20sp"/>
+
+</LinearLayout>

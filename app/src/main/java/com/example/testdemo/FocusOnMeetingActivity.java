@@ -51,10 +51,10 @@ public class FocusOnMeetingActivity extends AppCompatActivity {
                                 String title = editText.getText().toString();
                                 Bundle bundle = new Bundle();
                                 bundle.putString("title", title);
-                                //以下为尚未完成的代码，完成后需要取消注释
-                                //Intent intent=new Intent(FocusOnMeetingActivity.this,WriteNoteActivity.class);
-                                //intent.putExtras(bundle);
-                                //startActivity(intent);
+
+                                Intent intent=new Intent(FocusOnMeetingActivity.this,WriteNoteActivity.class);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
                                 Toast.makeText(FocusOnMeetingActivity.this, "写下自己的笔记", Toast.LENGTH_SHORT).show();
                             }
                         }).show();
