@@ -3,9 +3,11 @@ package com.example.testdemo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
+import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -13,16 +15,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.TextView;
 
-public class FocusOnStudyActivity extends AppCompatActivity {
+import androidx.annotation.RequiresApi;
+
+import static android.support.v4.widget.TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM;
+
+public class
+FocusOnStudyActivity extends AppCompatActivity {
     protected int timeSet;
     protected Chronometer chronometer;
     protected long startTime;
+    protected long startPoint;
     protected Vibrator vibrator;
 
     private boolean finished=false;
     private String type="Study";
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +44,18 @@ public class FocusOnStudyActivity extends AppCompatActivity {
 
         this.vibrator= (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         this.chronometer=findViewById(R.id.tick_Study);
-        this.startTime= SystemClock.elapsedRealtime();
+        this.startTime= SystemClock.elapsedRealtime()+timeSet*1000;
+        this.startPoint=SystemClock.elapsedRealtime();
         chronometer.setBase(this.startTime);
-        chronometer.setFormat("时间已经过去：%s");
+        chronometer.setFormat("%s");
+        chronometer.setCountDown(true);
+       // chronometer.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
         chronometer.start();
 
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
-                if(SystemClock.elapsedRealtime()-chronometer.getBase()>=timeSet*1000){
+                if(SystemClock.elapsedRealtime()-startPoint>=timeSet*1000){
                     chronometer.stop();
                     finished=true;
                     vibrator.vibrate(3000);
