@@ -62,7 +62,7 @@ FocusOnStudyActivity extends AppCompatActivity {
 
                     Intent intent1=new Intent(FocusOnStudyActivity.this,FeedbackActivity.class);
                     Bundle bundle1=new Bundle();
-                    bundle1.putInt("duringTime",timeSet);
+                    bundle1.putInt("duringTime",Math.abs(timeSet));
                     bundle1.putString("type",type);
                     bundle1.putBoolean("finished",finished);
 

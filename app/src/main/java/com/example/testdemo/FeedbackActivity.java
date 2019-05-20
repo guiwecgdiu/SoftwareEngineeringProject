@@ -24,7 +24,7 @@ public class FeedbackActivity extends AppCompatActivity {
 
         String type=bundle.getString("type");
         boolean finished=bundle.getBoolean("finished");
-        int duringTime=bundle.getInt("duringTime");
+        int duringTime=Math.abs(bundle.getInt("duringTime"));
 
         int minute=duringTime/60;
         int second=duringTime%60;
