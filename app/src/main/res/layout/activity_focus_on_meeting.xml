@@ -11,16 +11,18 @@
     <Chronometer
         android:id="@+id/tick_Meeting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="200dp"
+        android:gravity="center"
+        android:layout_alignTop="@id/buttons"
         android:layout_marginTop="40dp"
-        android:text="计时器"
         android:textSize="65sp"
-        android:textColor="#ffffff"/>
+        android:text="Timer"
+        android:shadowColor="@color/colorAccent"
+        android:textColor="#ffff"/>
 
     <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

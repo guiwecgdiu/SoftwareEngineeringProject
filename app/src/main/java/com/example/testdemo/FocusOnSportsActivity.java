@@ -3,6 +3,7 @@ package com.example.testdemo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
@@ -13,17 +14,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 
+import androidx.annotation.RequiresApi;
+
 public class FocusOnSportsActivity extends AppCompatActivity {
 
     protected int timeSet;
     protected Chronometer chronometer;
     protected long startTime;
+    protected long startPoint;
 
     protected Vibrator vibrator;
 
     private boolean finished=false;
     private String type="Sports";
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +40,10 @@ public class FocusOnSportsActivity extends AppCompatActivity {
         this.vibrator= (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         this.chronometer=findViewById(R.id.tick_Sports);
 
-        this.startTime= SystemClock.elapsedRealtime();
+        this.startTime= SystemClock.elapsedRealtime()+1000*timeSet;
+        this.startPoint=SystemClock.elapsedRealtime();
         chronometer.setBase(this.startTime);
+        chronometer.setCountDown(true);
         chronometer.setFormat("时间已经过去：%s");
         chronometer.start();
 
@@ -61,7 +68,7 @@ public class FocusOnSportsActivity extends AppCompatActivity {
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
-                if(SystemClock.elapsedRealtime()-chronometer.getBase()>=timeSet*1000){
+                if(SystemClock.elapsedRealtime()-startPoint>=timeSet*1000){
                     chronometer.stop();
                     vibrator.vibrate(3000);
 
