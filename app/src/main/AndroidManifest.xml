@@ -16,7 +16,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
+        android:icon="@drawable/graphic_clock_check"
         android:label="@string/app_name"
         android:hardwareAccelerated="false"
         android:supportsRtl="true"
