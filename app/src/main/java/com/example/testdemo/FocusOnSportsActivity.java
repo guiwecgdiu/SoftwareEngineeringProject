@@ -21,7 +21,7 @@ public class FocusOnSportsActivity extends AppCompatActivity {
     protected int timeSet;
     protected Chronometer chronometer;
     protected long startTime;
-    protected long startPoint;
+    //protected long startPoint;
 
     protected Vibrator vibrator;
 
@@ -40,11 +40,11 @@ public class FocusOnSportsActivity extends AppCompatActivity {
         this.vibrator= (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         this.chronometer=findViewById(R.id.tick_Sports);
 
-        this.startTime= SystemClock.elapsedRealtime()+1000*timeSet;
-        this.startPoint=SystemClock.elapsedRealtime();
+        this.startTime= SystemClock.elapsedRealtime();
+
         chronometer.setBase(this.startTime);
-        chronometer.setCountDown(true);
-        chronometer.setFormat("时间已经过去：%s");
+
+        chronometer.setFormat("时间已经过去\n%s");
         chronometer.start();
 
         Button button=findViewById(R.id.mapDirection);
@@ -68,7 +68,7 @@ public class FocusOnSportsActivity extends AppCompatActivity {
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
-                if(SystemClock.elapsedRealtime()-startPoint>=timeSet*1000){
+                if(SystemClock.elapsedRealtime()-chronometer.getBase()>=timeSet*1000){
                     chronometer.stop();
                     vibrator.vibrate(3000);
 
@@ -90,6 +90,7 @@ public class FocusOnSportsActivity extends AppCompatActivity {
     }
 
 
+    @Override
     public void onBackPressed(){
         AlertDialog.Builder reminderBuilder=new AlertDialog.Builder(FocusOnSportsActivity.this);
         reminderBuilder.setTitle("退出提示");
