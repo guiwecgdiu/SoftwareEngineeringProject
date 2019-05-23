@@ -26,7 +26,7 @@ FocusOnStudyActivity extends AppCompatActivity {
     protected int timeSet;
     protected Chronometer chronometer;
     protected long startTime;
-    protected long startPoint;
+    //protected long startPoint;
     protected Vibrator vibrator;
 
     private boolean finished=false;
@@ -44,18 +44,19 @@ FocusOnStudyActivity extends AppCompatActivity {
 
         this.vibrator= (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         this.chronometer=findViewById(R.id.tick_Study);
-        this.startTime= SystemClock.elapsedRealtime()+timeSet*1000;
-        this.startPoint=SystemClock.elapsedRealtime();
+        this.startTime= SystemClock.elapsedRealtime();
+        //this.startPoint=SystemClock.elapsedRealtime();
         chronometer.setBase(this.startTime);
-        chronometer.setFormat("%s");
-        chronometer.setCountDown(true);
+        chronometer.setFormat("时间已经过去\n%s");
+
+        //chronometer.setCountDown(true);
        // chronometer.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
         chronometer.start();
 
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
-                if(SystemClock.elapsedRealtime()-startPoint>=timeSet*1000){
+                if(SystemClock.elapsedRealtime()-chronometer.getBase()>=timeSet*1000){
                     chronometer.stop();
                     finished=true;
                     vibrator.vibrate(3000);

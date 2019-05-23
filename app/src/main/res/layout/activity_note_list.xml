@@ -47,8 +47,8 @@
             android:layout_marginTop="@dimen/fab_margin"
             android:layout_marginEnd="@dimen/fab_margin"
             android:layout_marginBottom="@dimen/fab_margin"
-            android:backgroundTint="#fff"
-            android:src="@drawable/plus"/>
+            android:src="@drawable/plus"
+            />
 
     </RelativeLayout>
 

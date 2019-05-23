@@ -195,14 +195,14 @@ public class NoteListActivity extends AppCompatActivity {
 
         notesLists.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view,final int i, long l) {
                 AlertDialog.Builder aBuider=new AlertDialog.Builder(NoteListActivity.this);
                 aBuider.setTitle("警告！");
                 aBuider.setMessage("确认删除这条笔记么？");
                 aBuider.setPositiveButton("确认删除", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Note temp=noteAdapter.getItem(i+1);
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        Note temp=noteAdapter.getItem(i);
 
                         int id=temp.getId();
 
