@@ -14,7 +14,7 @@
         android:textStyle="bold"
         android:layout_centerInParent="true"
         android:textSize="24sp"
-        android:textColor="#FF9800"/>
+        android:textColor="@color/textPrimary"/>
 
 
     <Button

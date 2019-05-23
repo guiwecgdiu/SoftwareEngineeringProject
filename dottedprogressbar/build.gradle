@@ -46,6 +46,3 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     //implementation 'com.android.support:appcompat-v7:23.1.1'
 }
-
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

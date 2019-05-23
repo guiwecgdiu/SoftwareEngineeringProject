@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".FocusOnStudyActivity"
     android:orientation="vertical"
-    android:background="#000">
+    android:background="@color/textPrimary">
 
     <Chronometer
         android:id="@+id/tick_Study"
@@ -21,7 +21,7 @@
         android:shadowColor="@color/colorAccent"
 
         android:text="计时器"
-        android:textColor="#ffffff"/>
+        android:textColor="@color/textColor"/>
 
     <LinearLayout
         android:id="@+id/boundary"
@@ -69,7 +69,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/button"
             android:textStyle="bold"
-            android:textColor="#ffffff"/>
+            android:textColor="@color/textColor"/>
 
     </LinearLayout>
 

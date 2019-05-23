@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#448AFF">
+    android:background="@color/colorPrimary">
 
     <ImageView
         android:layout_marginTop="30dp"
@@ -18,7 +18,7 @@
         android:layout_height="300dp"
         android:text="你好"
         android:textSize="24sp"
-        android:textColor="#FF9800"
+        android:textColor="@color/textColor"
         android:textStyle="bold"
         android:layout_toRightOf="@+id/checklist" />
 

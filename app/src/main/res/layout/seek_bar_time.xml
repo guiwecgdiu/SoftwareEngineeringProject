@@ -20,11 +20,11 @@
         android:layout_height="285dp"
         android:layout_centerInParent="true"
         app:max="60"
-        app:pointer_color="#FF9800"
+        app:pointer_color="@color/colorPrimaryDark"
         app:pointer_size="20dp"
         app:text_size="40sp"
-        app:wheel_active_color="#E040FB"
-        app:wheel_unactive_color="#7C4DFF" />
+        app:wheel_active_color="@color/colorPrimary"
+        app:wheel_unactive_color="@color/colroPrimaryLight" />
 
     <RelativeLayout
         android:layout_width="match_parent"

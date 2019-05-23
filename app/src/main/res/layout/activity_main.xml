@@ -44,9 +44,9 @@
                 app:dpArrowMinutePaddingPercent="10"
                 app:dpArrowMinuteSpeed="20"
                 app:dpArrowWidthPercent="8"
-                app:dpArrowsColor="#FF9800"
-                app:dpBaseColor="#FF9800"
-                app:dpCenterColor="#FF9800"
+                app:dpArrowsColor="@color/colorPrimaryDark"
+                app:dpBaseColor="@color/colorPrimaryDark"
+                app:dpCenterColor="@color/colorPrimaryDark"
                 app:dpClockwiseDots="false"
 
                 app:dpDotsCount="12"
