@@ -14,10 +14,11 @@
         android:paddingRight="5dp"
         android:paddingBottom="5dp"
         android:textSize="50sp"
-        android:textColor="#FF9800"
+        android:textColor="@color/textPrimary"
         android:focusable="false"
         android:textStyle="bold"
-        android:maxLines="1"/>
+        android:maxLines="1"
+        android:textColorHint="@color/divideColor"/>
 
 
     <LinearLayout
@@ -32,6 +33,8 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="C"
+            android:shadowColor="@color/divideColor"
+            android:textColor="@color/textPrimary"
             android:textSize="30sp"
             android:paddingRight="15sp"
             android:paddingBottom="15sp"/>
@@ -42,6 +45,7 @@
             android:id="@+id/btn_del"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:textColor="@color/textPrimary"
             android:text="D"
             android:textSize="30sp"
             android:layout_marginLeft="10dp"
@@ -54,6 +58,7 @@
 
             android:id="@+id/btn_div"
             android:layout_width="80dp"
+            android:textColor="@color/textPrimary"
             android:layout_height="80dp"
             android:text="÷"
             android:textSize="30sp"
@@ -66,6 +71,7 @@
         <Button
 
             android:id="@+id/btn_mul"
+            android:textColor="@color/textPrimary"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="×"
@@ -92,6 +98,7 @@
 
             android:id="@+id/btn_7"
             android:layout_width="80dp"
+            android:textColor="@color/textPrimary"
             android:layout_height="80dp"
             android:text="7"
             android:textSize="30sp"
@@ -105,6 +112,7 @@
             android:id="@+id/btn_8"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:textColor="@color/textPrimary"
             android:text="8"
             android:textSize="30sp"
             android:layout_marginLeft="10dp"
@@ -117,6 +125,7 @@
 
             android:id="@+id/btn_9"
             android:layout_width="80dp"
+            android:textColor="@color/textPrimary"
             android:layout_height="80dp"
             android:text="9"
             android:textSize="30sp"
@@ -130,6 +139,7 @@
             android:id="@+id/btn_min"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:textColor="@color/textPrimary"
             android:text="-"
             android:textSize="30sp"
             android:layout_marginLeft="10dp"
@@ -153,6 +163,7 @@
             android:id="@+id/btn_4"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:textColor="@color/textPrimary"
             android:text="4"
             android:textSize="30sp"
             android:paddingRight="15sp"
@@ -169,6 +180,7 @@
             android:layout_marginLeft="10dp"
             android:paddingRight="15sp"
             android:paddingBottom="15sp"
+            android:textColor="@color/textPrimary"
 
             />
 
@@ -181,6 +193,7 @@
             android:layout_marginLeft="10dp"
             android:paddingRight="15sp"
             android:paddingBottom="15sp"
+            android:textColor="@color/textPrimary"
 
             />
 
@@ -193,6 +206,7 @@
             android:layout_marginLeft="10dp"
             android:paddingRight="15sp"
             android:paddingBottom="15sp"
+            android:textColor="@color/textPrimary"
 
             />
 
@@ -223,6 +237,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:id="@+id/btn_1"
+                    android:textColor="@color/textPrimary"
                     android:text="1"
                     android:textSize="30sp"
                     android:paddingRight="15sp"
@@ -238,6 +253,7 @@
                     android:layout_marginLeft="10dp"
                     android:paddingRight="15sp"
                     android:paddingBottom="15sp"
+                    android:textColor="@color/textPrimary"
 
                     />
 
@@ -250,6 +266,7 @@
                     android:layout_marginLeft="10dp"
                     android:paddingRight="15sp"
                     android:paddingBottom="15sp"
+                    android:textColor="@color/textPrimary"
                     />
 
             </LinearLayout>
@@ -277,7 +294,7 @@
                     android:textSize="30sp"
 
                     android:paddingRight="15sp"
-
+                    android:textColor="@color/textPrimary"
                     android:paddingBottom="15sp"
 
                     />
@@ -293,6 +310,7 @@
                     android:text="."
 
                     android:textSize="30sp"
+                    android:textColor="@color/textPrimary"
 
                     android:layout_marginLeft="10dp"
 
@@ -321,7 +339,7 @@
             android:layout_marginLeft="10dp"
 
             android:text="="
-
+            android:textColor="@color/textPrimary"
             android:textSize="30sp"
 
             android:paddingRight="15sp"
