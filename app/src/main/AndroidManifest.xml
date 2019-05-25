@@ -2,25 +2,92 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.testdemo">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/graphic_clock_check"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".HistoryActivity"></activity>
-        <activity android:name=".FocusOnSportsActivity" />
-        <activity android:name=".FocusOnMeetingActivity" />
-        <activity android:name=".FeedbackActivity" />
-        <activity android:name=".CompassActivity" />
-        <activity android:name=".CalculatorActivity" />
-        <activity android:name=".MainActivity">
+        android:theme="@style/Other">
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".DictionaryActivity"
+            android:label="学习字典" />
+        <activity
+            android:name=".WriteNoteActivity"
+            android:label="写下自己的笔记"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="g7f3YHI6Vi4lXADRyF8La1sXPckvhDmk" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".NoteListActivity"
+            android:label="笔记总览"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".NoteContentActivity"
+            android:label="笔记内容" />
+        <activity
+            android:name=".ProductionActivity"
+            android:label="产品简介" />
+        <activity
+            android:name=".MapActivity"
+            android:label="地图导航" />
+        <activity
+            android:name=".FocusOnStudyActivity"
+            android:label="专注学习" />
+        <activity
+            android:name=".HistoryActivity"
+            android:label="历史记录" />
+        <activity
+            android:name=".FocusOnSportsActivity"
+            android:label="专注运动" />
+        <activity
+            android:name=".FocusOnMeetingActivity"
+            android:label="专注会议" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:label="专注反馈" />
+        <activity
+            android:name=".CompassActivity"
+            android:label="指南针" />
+        <activity
+            android:name=".CalculatorActivity"
+            android:label="计算器" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme">
+
         </activity>
     </application>
 

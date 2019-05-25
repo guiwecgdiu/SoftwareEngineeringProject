@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".WelcomeActivity">
+
+    <com.trncic.library.DottedProgressBar
+        android:id="@+id/welcomeDottedProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/welcome_slogon"
+        android:layout_marginBottom="-142dp"
+        app:activeDot="@drawable/red_star"
+        app:dotSize="29dp"
+        app:inactiveDot="@drawable/pink_star"
+        app:jumpingSpeed="670"
+        app:spacing="15dp" />
+
+    <TextView
+        android:id="@+id/welcome_slogon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-105dp"
+        android:text="专注，让生活更美好！"
+        android:textColor="#FF4081"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="姚宇翔，李佳地，苏展，李子根，张宇联合开发"
+        android:textColor="#fff"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
